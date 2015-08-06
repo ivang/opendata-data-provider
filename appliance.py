@@ -64,7 +64,7 @@ if __name__ == '__main__':
     data_files = [x for x in os.listdir(odp.source_path)
                     if x.split('.')[-1] in odp.SUPPORTED_FILE_FORMATS]
     for datafile in data_files:
-        odp.push_resource(package_id, odp.source_path + "/" + datafile)
+        odp.push_resource(package_id, os.path.join(odp.source_path, datafile)
         print("Uploaded " + datafile)
 
 
